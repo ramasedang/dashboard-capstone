@@ -7,7 +7,7 @@ services:
       - "3441:3441"
     environment:
       - NODE_ENV=production
-    command: ["pnpm", "preview", "--port", "3441"]
+    command: ["npm", "run", "preview", "--", "--port", "3441"]
     volumes:
       - .:/app
     networks:
