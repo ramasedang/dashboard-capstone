@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  nuxt-app:
+    build: .
+    ports:
+      - "3441:3441"
+    environment:
+      - NODE_ENV=production
+    command: ["pnpm", "preview", "--port", "3441"]
+    volumes:
+      - .:/app
+    networks:
+      - nuxt-network
+
+networks:
+  nuxt-network:
+    driver: bridge
